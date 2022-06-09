@@ -1,4 +1,4 @@
-const http = require("http"),
+let http = require("http"),
   fs = require("fs"),
   url = require("url");
 
