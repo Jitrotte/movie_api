@@ -46,3 +46,35 @@ Timestamp: Thu Jun 09 2022 18:39:05 GMT-0500 (Central Daylight Time)
 URL: /favicon.ico
 Timestamp: Thu Jun 09 2022 18:39:05 GMT-0500 (Central Daylight Time)
 
+URL: /
+Timestamp: Thu Jun 09 2022 22:21:56 GMT-0500 (Central Daylight Time)
+
+URL: /
+Timestamp: Thu Jun 09 2022 22:26:48 GMT-0500 (Central Daylight Time)
+
+URL: /documentation
+Timestamp: Thu Jun 09 2022 22:26:48 GMT-0500 (Central Daylight Time)
+
+URL: /documentation
+Timestamp: Thu Jun 09 2022 22:26:48 GMT-0500 (Central Daylight Time)
+
+URL: /documentation
+Timestamp: Thu Jun 09 2022 22:26:48 GMT-0500 (Central Daylight Time)
+
+URL: /
+Timestamp: Thu Jun 09 2022 22:26:48 GMT-0500 (Central Daylight Time)
+
+URL: /
+Timestamp: Thu Jun 09 2022 22:26:48 GMT-0500 (Central Daylight Time)
+
+URL: /favicon.ico
+Timestamp: Thu Jun 09 2022 22:26:48 GMT-0500 (Central Daylight Time)
+
+URL: /documentation
+Timestamp: Thu Jun 09 2022 22:26:57 GMT-0500 (Central Daylight Time)
+
+URL: /favicon.ico
+Timestamp: Thu Jun 09 2022 22:26:59 GMT-0500 (Central Daylight Time)
+
+::1 - - [13/Jun/2022:17:46:47 +0000] "GET /public/documentation.html HTTP/1.1" 404 164 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36"
+::1 - - [13/Jun/2022:17:47:06 +0000] "GET /public/documentation HTTP/1.1" 404 159 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36"
