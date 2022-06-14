@@ -14,5 +14,80 @@
       and upload their personal information, along with creating a list of their
       favorite movies.
     </p>
+
+    <h2>URL Endpoints and Request Methods</h2>
+    <table>
+      <tr>
+        <th>Business Logic</th>
+        <th>URL</th>
+        <th>HTTP Method</th>
+        <th>Request Body Data Format</th>
+        <th>Response Body Data Format</th>
+      </tr>
+      <tr>
+        <td>Return All Movies</td>
+        <td>'/movies'</td>
+        <td>GET</td>
+        <td>None</td>
+        <td>JSON response Object Containing all movies</td>
+      </tr>
+      <tr>
+        <td>Return Data about a Movie by title</td>
+        <td>'/movies/:title</td>
+        <td>GET</td>
+        <td>None</td>
+        <td>JSON object of a single movie</td>
+      </tr>
+      <tr>
+        <td>Return Data about a genre by name</td>
+        <td>'/movies/genre/:genreName'</td>
+        <td>GET</td>
+        <td>None</td>
+        <td>JSON res Description of genre</td>
+      </tr>
+      <tr>
+        <td>Return data about a Director by name</td>
+        <td>'/movies/directors/:directorName'</td>
+        <td>GET</td>
+        <td>None</td>
+        <td>JSON res w/ data about Director</td>
+      </tr>
+      <tr>
+        <td>Allow users to update their username</td>
+        <td>'/users/:id'</td>
+        <td>PUT</td>
+        <td>{'Name': 'newUserName',<br>
+             'movieFavorites': '[]'}
+          
+          </td>
+        <td>{'Name': 'updatedUserName',<br>
+          'movieFavorites': '[]'}</td>
+      </tr>
+      <tr>
+        <td>Allow users to add a movie to their favorites list</td>
+        <td>'/users/:id/:movieTitle'</td>
+        <td>POST</td>
+        <td>None</td>
+        <td>{'Name': 'ExampleUserName',<br>
+          'movieFavorites': '[newMovie]'}<br>
+        <em>Along with text confirmation.</em></td>
+      </tr>
+      <tr>
+        <td>Allow users to remove a movie from their favorites list</td>
+        <td>'/users/:id/:movieTitle'</td>
+        <td>DELETE</td>
+        <td>None</td>
+        <td>{'Name': 'ExampleUserName',<br>
+          'movieFavorites': '[newList]'}<br>
+        <em>Along with text confirmation.</em></td>
+      </tr>
+      <tr>
+        <td>Allow a user to be deleted</td>
+        <td>'/users/:id'</td>
+        <td>DELETE</td>
+        <td>None</td>
+        <td><em>Text confirming which user was deleted.</em></td>
+      </tr>
+    </table>
   </body>
 </html>
