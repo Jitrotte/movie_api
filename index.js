@@ -175,9 +175,9 @@ app.post("/users/:Username/movies/:MovieID", (req, res) => {
 
 //DELETE MOVIE FROM USERS FAVORITES
 app.delete("/users/:Username/movies/:MovieID", (req, res) => {
-  Users.findOneAndDelete(
+  Users.findOneAndUpdate(
     { Username: req.params.Username },
-    { $pull: { favoriteMovies: req.params.MovieID } },
+    { $pull: { FavoriteMovies: req.params.MovieID } },
     { new: true },
     (movie, updatedUser) => {
       if (!movie) {
@@ -195,7 +195,7 @@ app.delete("/users/:Username/movies/:MovieID", (req, res) => {
   });
 });
 
-//DELETE
+//DELETE USER
 app.delete("/users/:Username", (req, res) => {
   Users.findOneAndDelete({ Username: req.params.Username })
     .then((user) => {

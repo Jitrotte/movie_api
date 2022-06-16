@@ -53,8 +53,8 @@
         <td>JSON res w/ data about Director</td>
       </tr>
       <tr>
-        <td>Allow users to update their username</td>
-        <td>'/users/:id'</td>
+        <td>Allow users to update their info by Username</td>
+        <td>'/users/:Username'</td>
         <td>PUT</td>
         <td>{
           "Username": "New_Username",<br>
@@ -64,30 +64,40 @@
        }
           
           </td>
-        <td>{'Name': 'updatedUserName',<br>
-          'movieFavorites': '[]'}</td>
+        <td>{ "Username": "New_Username",<br>
+          "Password": "New_Password",<br>
+          "Email": "New_Email_@example.com",<br>
+          "Birthday": "YYYY-MM-DD"
+          }<br></td>
       </tr>
       <tr>
         <td>Allow users to add a movie to their favorites list</td>
-        <td>'/users/:id/:movieTitle'</td>
+        <td>'/users/:Username/movies/:MovieID'</td>
         <td>POST</td>
         <td>None</td>
-        <td>{'Name': 'ExampleUserName',<br>
-          'movieFavorites': '[newMovie]'}<br>
-        <em>Along with text confirmation.</em></td>
+        <td>{
+          "_id": "62a944ef6ab7d5c86da8739d",<br>
+          "Username": "Jacob Lawrence",<br>
+          "Email": "JLawrence@gmail.com",<br>
+          "Password": "5151",<br>
+          "Birthday": "1972-01-01T06:00:00.000Z",<br>
+          "FavoriteMovies": [
+              "62a90d3839dad42fb9c2becd"
+          ]<br>
+      }</td>
       </tr>
       <tr>
         <td>Allow users to remove a movie from their favorites list</td>
-        <td>'/users/:id/:movieTitle'</td>
+        <td>'/users/:Username/movies/:MovieID'</td>
         <td>DELETE</td>
         <td>None</td>
         <td>{'Name': 'ExampleUserName',<br>
           'movieFavorites': '[newList]'}<br>
-        <em>Along with text confirmation.</em></td>
+        </td>
       </tr>
       <tr>
         <td>Allow a user to be deleted</td>
-        <td>'/users/:id'</td>
+        <td>'/users/:Username'</td>
         <td>DELETE</td>
         <td>None</td>
         <td><em>Text confirming which user was deleted.</em></td>
