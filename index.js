@@ -21,10 +21,6 @@ app.use(bodyParser.json());
 //   flags: "a",
 // });
 
-
-
-
-
 // CREATE A NEW USER
 app.post("/users", (req, res) => {
   Users.findOne({ Username: req.body.Username })
@@ -130,7 +126,6 @@ app.get("/", (req, res) => {
   res.send("Welcome to my Movie API");
 });
 
-
 //UPDATE USER'S INFO BY USERNAME
 
 app.put("/users/:Username", (req, res) => {
@@ -163,7 +158,7 @@ app.post("/users/:Username/movies/:MovieID", (req, res) => {
     { Username: req.params.Username },
     {
       $push: {
-        favoriteMovies: req.params.MovieID,
+        FavoriteMovies: req.params.MovieID,
       },
     },
     { new: true },
