@@ -179,14 +179,12 @@ app.delete("/users/:Username/movies/:MovieID", (req, res) => {
     { Username: req.params.Username },
     { $pull: { FavoriteMovies: req.params.MovieID } },
     { new: true },
-    (movie, updatedUser) => {
-      if (!movie) {
-        res.status(400).send(req.params.MovieID + " was not found");
+    (err, updatedUser) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error: " + err);
       } else {
         res.json(updatedUser);
-        res
-          .status(200)
-          .send(req.params.MovieID + " was removed from Users list");
       }
     }
   ).catch((err) => {
