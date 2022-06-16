@@ -67,8 +67,8 @@
         <td>{ "Username": "New_Username",<br>
           "Password": "New_Password",<br>
           "Email": "New_Email_@example.com",<br>
-          "Birthday": "YYYY-MM-DD"
-          }<br></td>
+          "Birthday": "YYYY-MM-DD"<br>
+          }</td>
       </tr>
       <tr>
         <td>Allow users to add a movie to their favorites list</td>
@@ -91,9 +91,26 @@
         <td>'/users/:Username/movies/:MovieID'</td>
         <td>DELETE</td>
         <td>None</td>
-        <td>{'Name': 'ExampleUserName',<br>
-          'movieFavorites': '[newList]'}<br>
+        <td>{ "_id": "62a944ef6ab7d5c86da8739d",<br>
+          "Username": "Jacob Lawrence",<br>
+          "Email": "JLawrence@gmail.com",<br>
+          "Password": "5151",<br>
+          "Birthday": "1972-01-01T06:00:00.000Z",<br>
+          "FavoriteMovies": []<br>
+          }
         </td>
+      </tr>
+      <tr>
+        <td>Allow a user to be created</td>
+        <td>'/users'</td>
+        <td>POST</td>
+        <td>{
+          "Username": req.body.Username,<br>
+          "Password": req.body.Password,<br>
+          "Email": req.body.Email,<br>
+          "Birthday": req.body.Birthday,<br>
+        }</td>
+        <td><em>New User JSON Object.</em></td>
       </tr>
       <tr>
         <td>Allow a user to be deleted</td>
