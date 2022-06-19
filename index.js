@@ -24,9 +24,6 @@ mongoose.connect("mongodb://localhost:27017/myFlixDB", {
   useUnifiedTopology: true,
 });
 
-// const accessLogStream = fs.createWriteStream(path.join(__dirname, "log.txt"), {
-//   flags: "a",
-// });
 
 // CREATE A NEW USER
 app.post("/users", (req, res) => {
