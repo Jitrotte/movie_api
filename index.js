@@ -6,20 +6,23 @@ const express = require("express"),
   mongoose = require("mongoose"),
   Models = require("./models.js"),
   Movies = Models.Movie,
-  Users = Models.User;
+  Users = Models.User,
+  cors = require("cors");
 
-mongoose.connect("mongodb://localhost:27017/myFlixDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+let auth = require("./auth")(app);
+const passport = require("passport");
+require("./passport");
+
+app.use(cors());
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let auth = require("./auth")(app);
-const passport = require("passport");
-require("./passport");
+mongoose.connect("mongodb://localhost:27017/myFlixDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // const accessLogStream = fs.createWriteStream(path.join(__dirname, "log.txt"), {
 //   flags: "a",
