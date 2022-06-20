@@ -17,13 +17,16 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
+const accessLogStream = fs.createWriteStream("log.txt", { flag: "a" });
+
+app.use(morgan("combined", { stream: accessLogStream }));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect("mongodb://localhost:27017/myFlixDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
 
 // CREATE A NEW USER
 app.post("/users", (req, res) => {
@@ -152,6 +155,10 @@ app.get(
 // READ
 app.get("/", (req, res) => {
   res.send("Welcome to my Movie API");
+});
+
+app.get("/documentation", (req, res) => {
+  res.sendFile("public/documentation.html", { root: __dirname });
 });
 
 //UPDATE USER'S INFO BY USERNAME
