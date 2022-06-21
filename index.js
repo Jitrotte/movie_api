@@ -25,7 +25,11 @@ app.use(morgan("combined", { stream: accessLogStream }));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://localhost:27017/myFlixDB", {
+// mongoose.connect("mongodb://localhost:27017/myFlixDB", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+mongoose.connect(process.env.CONNECTION_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -280,6 +284,6 @@ app.delete(
 );
 
 const port = process.env.PORT || 8080;
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, "0.0.0.0", () => {
   console.log("Listening on Port " + port);
 });
