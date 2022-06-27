@@ -85,7 +85,7 @@ app.post(
 // READ/GET ALL MOVIES
 app.get(
   "/movies",
-  passport.authenticate("jwt", { session: true }),
+  passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Movies.find()
       .then((movies) => {
