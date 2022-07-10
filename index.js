@@ -85,7 +85,7 @@ app.post(
 // READ/GET ALL MOVIES
 app.get(
   "/movies",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Movies.find()
       .then((movies) => {
@@ -287,3 +287,5 @@ const port = process.env.PORT || 8080;
 app.listen(port, "0.0.0.0", () => {
   console.log("Listening on Port " + port);
 });
+
+
